@@ -1,0 +1,4 @@
+# Whitelisting gud
+*
+!.gitignore
+!ripper.js
