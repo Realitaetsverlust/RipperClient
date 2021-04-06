@@ -19,7 +19,7 @@
             var parent = document.getElementById('info-contents').parentNode;
 
             var apiKey = 'YOUR_API_KEY';
-            var baseUrl = 'https://ripper.realitaetsverlust.rocks';
+            var baseUrl = 'https://ripper.url';
             var ripperUrl = baseUrl + '/Ripper';
             var downloadUrl = baseUrl + '/Download?videoTitle=';
 
