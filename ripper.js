@@ -18,9 +18,10 @@
             var infobox = document.getElementById('info-contents');
             var parent = document.getElementById('info-contents').parentNode;
 
-            var apiKey = 'API_KEY';
-            var ripperUrl = 'RIPPER_URL';
-            var ripperDlUrl = ripperUrl + '/download.php?videoTitle=';
+            var apiKey = 'YOUR_API_KEY';
+            var baseUrl = 'https://ripper.realitaetsverlust.rocks';
+            var ripperUrl = baseUrl + '/Ripper';
+            var downloadUrl = baseUrl + '/Download?videoTitle=';
 
             // Create button
             var button = document.createElement('button');
@@ -53,7 +54,11 @@
                         r: Date.now() // We only send this to avoid caching, it's not used by the server
                     }
                 }).done(function(data) {
-                    window.open(ripperDlUrl+data.videoTitle, '_blank')
+                    if(data.videoTitle) {
+                        window.open(downloadUrl+data.videoTitle, '_blank')
+                    } else {
+                        alert(data.error);
+                    }
                 });
             });
         },
